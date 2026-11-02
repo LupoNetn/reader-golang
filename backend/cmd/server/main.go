@@ -13,14 +13,12 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/luponetn/readr-go/internal/engine"
 	"github.com/luponetn/readr-go/internal/websocket"
 )
 
 func resolveDataPath() string {
-	if env := os.Getenv("READR_DATA_PATH"); env != "" {
-		return env
-	}
 	if _, err := os.Stat("data"); err == nil {
 		return filepath.Join("data", "store.json")
 	}
@@ -46,6 +44,8 @@ func corsMiddleware(next http.Handler) http.Handler {
 }
 
 func main() {
+	_ = godotenv.Load(".env", "backend/.env")
+
 	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
 		Level: slog.LevelInfo,
 	}))
@@ -70,12 +70,10 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	// WebSocket full-duplex endpoint
 	mux.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		websocket.ServeWS(hub, store, w, r)
 	})
 
-	// Health check endpoint
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		docs, chunks := store.Stats()
 		w.Header().Set("Content-Type", "application/json")
@@ -88,7 +86,6 @@ func main() {
 		})
 	})
 
-	// Root welcome / status endpoint
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)

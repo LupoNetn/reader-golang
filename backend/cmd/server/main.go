@@ -63,6 +63,9 @@ func main() {
 	docCount, chunkCount := store.Stats()
 	slog.Info("Store initialized", "dataPath", dataPath, "documents", docCount, "chunks", chunkCount)
 
+	// Automatically index sample files from 'text files' directory if not already indexed
+	autoSeedTextFiles(store)
+
 	hub := websocket.NewHub(store)
 
 	mux := http.NewServeMux()

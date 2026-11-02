@@ -8,11 +8,20 @@ import (
 	"fmt"
 	"io"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 
 	"github.com/ledongthuc/pdf"
 )
+
+var camelRegex = regexp.MustCompile(`([a-z0-9])([A-Z])`)
+
+func formatKey(key string) string {
+	k := camelRegex.ReplaceAllString(key, "$1 $2")
+	k = strings.ReplaceAll(k, "_", " ")
+	return strings.TrimSpace(k)
+}
 
 // ParseContent decodes content (raw or base64) and parses it according to its file extension.
 func ParseContent(filename, fileType, rawContent string) (string, error) {
@@ -102,7 +111,7 @@ func ParseCSV(data []byte) (string, error) {
 			}
 			header := "Field"
 			if colIdx < len(headers) && headers[colIdx] != "" {
-				header = headers[colIdx]
+				header = formatKey(headers[colIdx])
 			}
 			pairs = append(pairs, fmt.Sprintf("%s: %s", header, cellVal))
 		}
@@ -140,7 +149,7 @@ func ParseJSON(data []byte) (string, error) {
 				}
 				sort.Strings(keys)
 				for _, k := range keys {
-					pairs = append(pairs, fmt.Sprintf("%s: %v", k, obj[k]))
+					pairs = append(pairs, fmt.Sprintf("%s: %v", formatKey(k), obj[k]))
 				}
 				if len(pairs) > 0 {
 					lines = append(lines, strings.Join(pairs, ", "))
@@ -159,7 +168,7 @@ func ParseJSON(data []byte) (string, error) {
 		}
 		sort.Strings(keys)
 		for _, k := range keys {
-			pairs = append(pairs, fmt.Sprintf("%s: %v", k, single[k]))
+			pairs = append(pairs, fmt.Sprintf("%s: %v", formatKey(k), single[k]))
 		}
 		return strings.Join(pairs, ", "), nil
 	}

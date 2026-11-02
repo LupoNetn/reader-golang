@@ -1,8 +1,12 @@
 package engine
 
 import (
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
+
+	"github.com/luponetn/readr-go/internal/parsers"
 )
 
 func createSampleChunks() []DocumentChunk {
@@ -154,5 +158,83 @@ func TestBM25Search_EmployeesStore(t *testing.T) {
 	t.Logf("Result: status=%s, searched=%d, primary=%+v", result.Status, result.TotalChunksSearched, result.PrimaryMatch)
 	if result.Status != "found" {
 		t.Errorf("expected status 'found', got '%s'", result.Status)
+	}
+}
+
+func TestBM25Search_AllFiveSampleFiles(t *testing.T) {
+	sampleDir := "../../../text files"
+	if _, err := os.Stat(sampleDir); err != nil {
+		sampleDir = "../../text files"
+	}
+	if _, err := os.Stat(sampleDir); err != nil {
+		sampleDir = "text files"
+	}
+	entries, err := os.ReadDir(sampleDir)
+	if err != nil {
+		t.Skip("sample directory not found")
+	}
+
+	var allChunks []DocumentChunk
+	for _, entry := range entries {
+		data, err := os.ReadFile(filepath.Join(sampleDir, entry.Name()))
+		if err != nil {
+			continue
+		}
+		ext := strings.ToLower(filepath.Ext(entry.Name()))
+		parsed, err := parsers.ParseContent(entry.Name(), ext, string(data))
+		if err != nil {
+			t.Fatalf("failed to parse %s: %v", entry.Name(), err)
+		}
+		chunks := ChunkText(parsed, "doc-"+entry.Name(), entry.Name())
+		allChunks = append(allChunks, chunks...)
+	}
+
+	testCases := []struct {
+		name          string
+		query         string
+		expectedInDoc string
+	}{
+		{
+			name:          "Infrastructure JSON Query",
+			query:         "Which cluster supports 250000 concurrent websockets in Northern Virginia",
+			expectedInDoc: "250000",
+		},
+		{
+			name:          "PDF Liquidated Damages",
+			query:         "What are the liquidated damages for leaking the BM25 retrieval code?",
+			expectedInDoc: "500,000",
+		},
+		{
+			name:          "CSV Elena Salary",
+			query:         "Who is the Principal Systems Architect in Zurich and what is their salary?",
+			expectedInDoc: "195000",
+		},
+		{
+			name:          "Offer Letter Severance",
+			query:         "What is the severance continuation period if terminated without Cause?",
+			expectedInDoc: "severance",
+		},
+		{
+			name:          "Architecture MD Guards",
+			query:         "What are the minimum confidence guards and keyword match ratios?",
+			expectedInDoc: "0.30",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			res := Search(allChunks, tc.query)
+			if res.Status != "found" {
+				t.Fatalf("query '%s' returned status '%s', expected 'found'", tc.query, res.Status)
+			}
+			if res.PrimaryMatch == nil {
+				t.Fatalf("expected non-nil PrimaryMatch for query: %s", tc.query)
+			}
+			if !strings.Contains(res.PrimaryMatch.Content, tc.expectedInDoc) {
+				t.Errorf("expected '%s' in content, got: %s", tc.expectedInDoc, res.PrimaryMatch.Content)
+			}
+			t.Logf("PASS [%s]: score=%.2f matchPct=%.0f%% excerpt=%.80s...",
+				tc.name, res.PrimaryMatch.Score, res.PrimaryMatch.MatchPercentage, res.PrimaryMatch.Content)
+		})
 	}
 }

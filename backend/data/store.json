@@ -1334,6 +1334,267 @@
         "executionTimeMs": 0,
         "latencyMs": 0
       }
+    },
+    {
+      "id": "699df892-e3eb-4e63-b726-651599deadbc",
+      "timestamp": "2026-11-02T07:14:00.2219736+01:00",
+      "query": "Which cluster supports 250000 concurrent websockets in Northern Virginia",
+      "result": {
+        "query": "Which cluster supports 250000 concurrent websockets in Northern Virginia",
+        "status": "found",
+        "primaryMatch": {
+          "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-1",
+          "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+          "filename": "infrastructure.json",
+          "chunkIndex": 1,
+          "content": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+          "text": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+          "score": 14.6549,
+          "matchPercentage": 85.7,
+          "matchedKeywords": [
+            "cluster",
+            "250000",
+            "concurrent",
+            "websockets",
+            "northern",
+            "virginia"
+          ]
+        },
+        "primaryExcerpt": {
+          "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-1",
+          "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+          "filename": "infrastructure.json",
+          "chunkIndex": 1,
+          "content": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+          "text": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+          "score": 14.6549,
+          "matchPercentage": 85.7,
+          "matchedKeywords": [
+            "cluster",
+            "250000",
+            "concurrent",
+            "websockets",
+            "northern",
+            "virginia"
+          ]
+        },
+        "allMatches": [
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-1",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 1,
+            "content": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "text": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "score": 14.6549,
+            "matchPercentage": 85.7,
+            "matchedKeywords": [
+              "cluster",
+              "250000",
+              "concurrent",
+              "websockets",
+              "northern",
+              "virginia"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-0",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 0,
+            "content": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "text": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "score": 5.9848,
+            "matchPercentage": 42.9,
+            "matchedKeywords": [
+              "cluster",
+              "concurrent",
+              "websockets"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-2",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 2,
+            "content": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "text": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "score": 5.9848,
+            "matchPercentage": 42.9,
+            "matchedKeywords": [
+              "cluster",
+              "concurrent",
+              "websockets"
+            ]
+          }
+        ],
+        "alternativeExcerpts": [
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-0",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 0,
+            "content": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "text": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "score": 5.9848,
+            "matchPercentage": 42.9,
+            "matchedKeywords": [
+              "cluster",
+              "concurrent",
+              "websockets"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-2",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 2,
+            "content": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "text": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "score": 5.9848,
+            "matchPercentage": 42.9,
+            "matchedKeywords": [
+              "cluster",
+              "concurrent",
+              "websockets"
+            ]
+          }
+        ],
+        "totalChunksSearched": 18,
+        "executionTimeMs": 0,
+        "latencyMs": 0
+      }
+    },
+    {
+      "id": "da4778c2-26e1-47b1-9135-e3a2dd9c6a3d",
+      "timestamp": "2026-11-02T07:14:39.1135719+01:00",
+      "query": "What is the VIP address and failover target for Frankfurt?",
+      "result": {
+        "query": "What is the VIP address and failover target for Frankfurt?",
+        "status": "found",
+        "primaryMatch": {
+          "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-0",
+          "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+          "filename": "infrastructure.json",
+          "chunkIndex": 0,
+          "content": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+          "text": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+          "score": 10.6774,
+          "matchPercentage": 100,
+          "matchedKeywords": [
+            "vip",
+            "address",
+            "failover",
+            "target",
+            "frankfurt"
+          ]
+        },
+        "primaryExcerpt": {
+          "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-0",
+          "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+          "filename": "infrastructure.json",
+          "chunkIndex": 0,
+          "content": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+          "text": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+          "score": 10.6774,
+          "matchPercentage": 100,
+          "matchedKeywords": [
+            "vip",
+            "address",
+            "failover",
+            "target",
+            "frankfurt"
+          ]
+        },
+        "allMatches": [
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-0",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 0,
+            "content": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "text": "cluster id: eu-central-alpha, encryption standard: AES-256-GCM hardware accelerated, failover target: eu-west-bravo, max concurrent websockets: 125000, maximum latency sla: 12ms, primary datacenter: Equinix FR2, region: Frankfurt, storage replication: 3x Synchronous Raft, vip address: 194.12.88.42",
+            "score": 10.6774,
+            "matchPercentage": 100,
+            "matchedKeywords": [
+              "vip",
+              "address",
+              "failover",
+              "target",
+              "frankfurt"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-2",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 2,
+            "content": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "text": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "score": 7.6833,
+            "matchPercentage": 80,
+            "matchedKeywords": [
+              "vip",
+              "address",
+              "failover",
+              "target"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-1",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 1,
+            "content": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "text": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "score": 7.5231,
+            "matchPercentage": 80,
+            "matchedKeywords": [
+              "vip",
+              "address",
+              "failover",
+              "target"
+            ]
+          }
+        ],
+        "alternativeExcerpts": [
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-2",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 2,
+            "content": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "text": "cluster id: ap-southeast-gamma, encryption standard: AES-256-GCM hardware accelerated, failover target: ap-northeast-tokyo, max concurrent websockets: 80000, maximum latency sla: 15ms, primary datacenter: Singtel DCS, region: Singapore, storage replication: 3x Asynchronous Snapshot, vip address: 203.0.113.19",
+            "score": 7.6833,
+            "matchPercentage": 80,
+            "matchedKeywords": [
+              "vip",
+              "address",
+              "failover",
+              "target"
+            ]
+          },
+          {
+            "chunkId": "209a74fc-173a-496f-b8a4-50504723427a-chk-1",
+            "documentId": "209a74fc-173a-496f-b8a4-50504723427a",
+            "filename": "infrastructure.json",
+            "chunkIndex": 1,
+            "content": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "text": "cluster id: us-east-prod-1, encryption standard: ChaCha20-Poly1305 with TLS 1.3, failover target: us-west-prod-2, max concurrent websockets: 250000, maximum latency sla: 8ms, primary datacenter: CoreSite VA3, region: Northern Virginia, storage replication: 5x Multi-AZ Paxos, vip address: 198.51.100.77",
+            "score": 7.5231,
+            "matchPercentage": 80,
+            "matchedKeywords": [
+              "vip",
+              "address",
+              "failover",
+              "target"
+            ]
+          }
+        ],
+        "totalChunksSearched": 18,
+        "executionTimeMs": 0,
+        "latencyMs": 0
+      }
     }
   ]
 }

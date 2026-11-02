@@ -30,6 +30,7 @@ type MatchedPassage struct {
 	Filename        string   `json:"filename"`
 	ChunkIndex      int      `json:"chunkIndex"`
 	Content         string   `json:"content"`
+	Text            string   `json:"text"` // Alias for frontend compatibility
 	Score           float64  `json:"score"`
 	MatchPercentage float64  `json:"matchPercentage"`
 	MatchedKeywords []string `json:"matchedKeywords"`
@@ -40,9 +41,12 @@ type SearchResult struct {
 	Query               string           `json:"query"`
 	Status              string           `json:"status"` // "found" or "not_found"
 	PrimaryMatch        *MatchedPassage  `json:"primaryMatch"`
+	PrimaryExcerpt      *MatchedPassage  `json:"primaryExcerpt"`      // Alias for frontend
 	AllMatches          []MatchedPassage `json:"allMatches"`
+	AlternativeExcerpts []MatchedPassage `json:"alternativeExcerpts"` // Alias for frontend
 	TotalChunksSearched int              `json:"totalChunksSearched"`
 	ExecutionTimeMs     float64          `json:"executionTimeMs"`
+	LatencyMs           float64          `json:"latencyMs"`           // Alias for frontend
 }
 
 // ChatHistoryItem records a single deterministic query and its result.

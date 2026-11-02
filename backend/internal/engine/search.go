@@ -28,7 +28,9 @@ func Search(chunks []DocumentChunk, query string) *SearchResult {
 	}
 
 	defer func() {
-		result.ExecutionTimeMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+		ms := float64(time.Since(startTime).Microseconds()) / 1000.0
+		result.ExecutionTimeMs = ms
+		result.LatencyMs = ms
 	}()
 
 	totalChunks := len(chunks)
@@ -132,7 +134,7 @@ func Search(chunks []DocumentChunk, query string) *SearchResult {
 		}
 
 		// Match percentage represents normalized confidence based on keyword coverage and relative relevance
-		matchPercentage := math.Round(keywordMatchRatio * 1000.0) / 10.0
+		matchPercentage := math.Round(keywordMatchRatio*1000.0) / 10.0
 
 		candidateMatches = append(candidateMatches, MatchedPassage{
 			ChunkID:         chunk.ID,
@@ -140,6 +142,7 @@ func Search(chunks []DocumentChunk, query string) *SearchResult {
 			Filename:        chunk.Filename,
 			ChunkIndex:      chunk.ChunkIndex,
 			Content:         chunk.Content,
+			Text:            chunk.Content,
 			Score:           math.Round(score*10000.0) / 10000.0,
 			MatchPercentage: matchPercentage,
 			MatchedKeywords: matchedKeywords,
@@ -171,7 +174,13 @@ func Search(chunks []DocumentChunk, query string) *SearchResult {
 
 	result.Status = "found"
 	result.PrimaryMatch = &topMatches[0]
+	result.PrimaryExcerpt = &topMatches[0]
 	result.AllMatches = topMatches
+	if len(topMatches) > 1 {
+		result.AlternativeExcerpts = topMatches[1:]
+	} else {
+		result.AlternativeExcerpts = []MatchedPassage{}
+	}
 
 	return result
 }

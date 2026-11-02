@@ -62,10 +62,13 @@ export function useChatRetrieval({
 
     try {
       const searchResult = await askDocument(text);
+      const primary = searchResult.primaryMatch || searchResult.primaryExcerpt;
+      const passageText = primary?.content || primary?.text || 'No literal passage found.';
+
       const assistantMsg: Message = {
         id: `msg-a-${Date.now()}`,
         role: 'assistant',
-        content: searchResult.primaryExcerpt?.text || 'No literal passage found.',
+        content: passageText,
         timestamp: Date.now(),
         result: searchResult,
         isStreaming: true,
@@ -111,10 +114,11 @@ export function useChatRetrieval({
       content: item.query,
       timestamp: item.timestamp,
     };
+    const primary = item.result?.primaryMatch || item.result?.primaryExcerpt;
     const assistantMsg: Message = {
       id: `msg-hist-a-${item.id}`,
       role: 'assistant',
-      content: item.result?.primaryExcerpt?.text || '',
+      content: primary?.content || primary?.text || '',
       timestamp: item.timestamp,
       result: item.result,
     };

@@ -142,3 +142,17 @@ func TestChunker_SentenceSplitting(t *testing.T) {
 		}
 	}
 }
+
+func TestBM25Search_EmployeesStore(t *testing.T) {
+	store, err := NewStore("../../data/store.json")
+	if err != nil {
+		t.Skip("skipping store test if data/store.json not found")
+	}
+	chunks := store.GetAllChunks()
+	query := "Who is the Principal Systems Architect in Zurich and what is their salary?"
+	result := Search(chunks, query)
+	t.Logf("Result: status=%s, searched=%d, primary=%+v", result.Status, result.TotalChunksSearched, result.PrimaryMatch)
+	if result.Status != "found" {
+		t.Errorf("expected status 'found', got '%s'", result.Status)
+	}
+}

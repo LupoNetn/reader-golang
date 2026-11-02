@@ -49,7 +49,7 @@ export function SourceDrawer({ excerpts, formatScore }: SourceDrawerProps) {
               </div>
 
               <p className="text-neutral-800 dark:text-neutral-200 whitespace-pre-wrap leading-relaxed font-sans text-xs">
-                {alt.text}
+                {alt.content || alt.text}
               </p>
 
               {alt.matchedKeywords && alt.matchedKeywords.length > 0 && (

@@ -88,8 +88,14 @@ export function MessageItem({ message, isLatest }: MessageItemProps) {
   }
 
   const searchResult = message.result;
-  const primaryCitation = searchResult?.primaryExcerpt;
-  const alternativeExcerpts = searchResult?.alternativeExcerpts || [];
+  const primaryCitation = searchResult?.primaryMatch || searchResult?.primaryExcerpt;
+  const alternativeExcerpts =
+    searchResult?.alternativeExcerpts && searchResult.alternativeExcerpts.length > 0
+      ? searchResult.alternativeExcerpts
+      : searchResult?.allMatches && searchResult.allMatches.length > 1
+      ? searchResult.allMatches.slice(1)
+      : [];
+  const latency = searchResult?.latencyMs ?? searchResult?.executionTimeMs;
 
   const textToDisplay =
     displayedWordCount === Infinity || !isTyping
@@ -104,9 +110,9 @@ export function MessageItem({ message, isLatest }: MessageItemProps) {
             <span className="uppercase tracking-wider font-semibold text-neutral-900 dark:text-neutral-100">
               VERBATIM PASSAGE
             </span>
-            {searchResult?.latencyMs !== undefined && (
+            {latency !== undefined && (
               <span className="text-neutral-400 dark:text-neutral-600">
-                ({searchResult.latencyMs}ms)
+                ({latency}ms)
               </span>
             )}
           </div>

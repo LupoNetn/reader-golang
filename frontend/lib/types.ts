@@ -10,20 +10,27 @@ export interface DocumentMeta {
 
 export interface MatchedPassage {
   id?: string;
+  chunkId?: string;
   documentId: string;
   filename: string;
   chunkIndex: number;
-  text: string;
-  score: number; // 0 to 1, or 0 to 100
+  content?: string;
+  text?: string;
+  score: number;
+  matchPercentage?: number;
   matchedKeywords: string[];
   metadata?: Record<string, unknown>;
 }
 
 export interface SearchResult {
   query: string;
-  primaryExcerpt: MatchedPassage;
-  alternativeExcerpts: MatchedPassage[];
-  totalMatches: number;
+  status?: string;
+  primaryMatch?: MatchedPassage;
+  primaryExcerpt?: MatchedPassage;
+  allMatches?: MatchedPassage[];
+  alternativeExcerpts?: MatchedPassage[];
+  totalChunksSearched?: number;
+  executionTimeMs?: number;
   latencyMs?: number;
 }
 

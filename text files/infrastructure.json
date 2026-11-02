@@ -1,0 +1,36 @@
+[
+  {
+    "cluster_id": "eu-central-alpha",
+    "region": "Frankfurt",
+    "primary_datacenter": "Equinix FR2",
+    "vip_address": "194.12.88.42",
+    "maximum_latency_sla": "12ms",
+    "storage_replication": "3x Synchronous Raft",
+    "encryption_standard": "AES-256-GCM hardware accelerated",
+    "failover_target": "eu-west-bravo",
+    "max_concurrent_websockets": 125000
+  },
+  {
+    "cluster_id": "us-east-prod-1",
+    "region": "Northern Virginia",
+    "primary_datacenter": "CoreSite VA3",
+    "vip_address": "198.51.100.77",
+    "maximum_latency_sla": "8ms",
+    "storage_replication": "5x Multi-AZ Paxos",
+    "encryption_standard": "ChaCha20-Poly1305 with TLS 1.3",
+    "failover_target": "us-west-prod-2",
+    "max_concurrent_websockets": 250000
+  },
+  {
+    "cluster_id": "ap-southeast-gamma",
+    "region": "Singapore",
+    "primary_datacenter": "Singtel DCS",
+    "vip_address": "203.0.113.19",
+    "maximum_latency_sla": "15ms",
+    "storage_replication": "3x Asynchronous Snapshot",
+    "encryption_standard": "AES-256-GCM hardware accelerated",
+    "failover_target": "ap-northeast-tokyo",
+    "max_concurrent_websockets": 80000
+  }
+]
+

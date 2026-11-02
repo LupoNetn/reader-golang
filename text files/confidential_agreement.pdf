@@ -1,0 +1,53 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 878 >>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(CONFIDENTIAL INTELLECTUAL PROPERTY AGREEMENT) Tj
+0 -30 Td
+/F1 11 Tf
+(1. Governing Jurisdiction: This agreement is governed by the laws of the State of Delaware.) Tj
+0 -22 Td
+(2. Liquidated Damages Clause: Any unauthorized leak of the proprietary BM25 retrieval code) Tj
+0 -16 Td
+(   carries an immediate liquidated statutory damage assessment of $500,000 USD.) Tj
+0 -22 Td
+(3. Trade Secret Classification: In-memory token hashing and sentence splitting algorithms) Tj
+0 -16 Td
+(   are classified as Level-5 Proprietary Trade Secrets under Section 14B.) Tj
+0 -22 Td
+(4. Forensic Audits: The Company reserves the unilateral right to conduct unannounced forensic) Tj
+0 -16 Td
+(   workstation inspections with exactly 48 hours written notice.) Tj
+0 -22 Td
+(5. Term of Obligation: Confidentiality covenants remain in effect for seven consecutive years.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1240
+%%EOF

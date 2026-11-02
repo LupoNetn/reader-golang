@@ -1,0 +1,8 @@
+EmployeeID,FullName,JobTitle,Department,OfficeLocation,AnnualSalary,SecurityClearance,StartDate
+EMP-1042,Elena Rostova,Principal Systems Architect,Core Infrastructure,Zurich,195000,TopSecret,2022-03-15
+EMP-2089,Marcus Vance,Lead Frontend Technologist,User Experience,San Francisco,180000,Secret,2023-01-10
+EMP-3310,Aisha Al-Mansoor,Senior Distributed Systems Engineer,Data Platform,London,168000,Secret,2021-08-01
+EMP-4105,David Chen,Staff Site Reliability Engineer,Cloud Operations,Singapore,172000,TopSecret,2020-11-20
+EMP-5521,Siddharth Patel,Database Reliability Specialist,Persistence Tier,Bengaluru,145000,PublicTrust,2024-02-01
+EMP-6743,Chloe Dubois,Head of Algorithmic Retrieval,Information Retrieval,Paris,210000,TopSecret,2019-06-18
+

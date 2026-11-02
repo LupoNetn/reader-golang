@@ -1,0 +1,24 @@
+CONFIDENTIAL EMPLOYMENT OFFER LETTER
+Date: October 24, 2026
+Candidate: Jonathan Mercer
+Position: Principal Distributed Systems Engineer
+Reporting To: Vice President of Engineering
+
+Dear Jonathan,
+
+We are delighted to extend this formal offer of employment with Readr Technologies Inc. This document details the terms, compensation structure, and contractual covenants of your engagement.
+
+1. Compensation and Equity Grants
+Your starting base salary will be $225,000 USD per annum, payable semi-monthly in accordance with standard payroll practices. Additionally, subject to approval by the Board of Directors, you will be granted an option to purchase 45,000 shares of Common Stock. These incentive options will vest over a 48-month period, with a 25% cliff after exactly 12 months of active service, followed by monthly equal tranches.
+
+2. Annual Performance Bonus and Relocation Stipend
+You will be eligible for an annual performance bonus with a target threshold of 20% of your base salary, calculated based on milestone delivery and system uptime metrics. You will also receive an immediate, non-recoverable relocation allowance of $15,000 USD to facilitate your transition to our Seattle engineering office.
+
+3. Restrictive Covenants and Non-Compete Clauses
+During the term of your employment and for a mandatory period of twelve (12) consecutive months following the termination of your employment for any reason, you shall not directly or indirectly engage in, perform services for, invest in, or consult with any competitive passage retrieval or deterministic indexing technology provider within North America and the European Economic Area.
+
+4. Termination and Severance Provisions
+In the event that your employment is terminated by the Company without Cause, you shall be entitled to receive four (4) months of continuous base salary continuation as severance, contingent upon your execution of an unreserved general liability release.
+
+Please indicate your acceptance of this offer by signing and returning this letter by November 15, 2026.
+

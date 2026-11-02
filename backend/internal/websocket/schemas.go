@@ -63,4 +63,3 @@ func (c *Client) handleResourcesList(id json.RawMessage) {
 
 	c.sendResponse(NewSuccessResponse(id, map[string]interface{}{"resources": resources}))
 }
-

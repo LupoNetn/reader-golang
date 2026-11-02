@@ -1,5 +1,152 @@
 {
-  "documents": [],
-  "chunks": [],
-  "history": []
+  "documents": [
+    {
+      "id": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+      "filename": "sample.txt",
+      "fileType": "txt",
+      "uploadedAt": "2026-11-02T03:25:29.465794+01:00",
+      "chunkCount": 1,
+      "totalChars": 327
+    }
+  ],
+  "chunks": [
+    {
+      "id": "c3706adc-aaf2-4bf4-8283-b2feb441d01a-chk-0",
+      "documentId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+      "filename": "sample.txt",
+      "chunkIndex": 0,
+      "content": "Acme Technologies was founded in 2018 in San Francisco. In fiscal year 2025, Acme reported an annual recurring revenue of $42.5 million. The company employs 150 engineers across three continents. Their flagship product is Readr, a deterministic document search engine. Acme raised a $12M Series A round led by Horizon Ventures.",
+      "wordCount": 51,
+      "terms": {
+        "12m": 1,
+        "150": 1,
+        "2018": 1,
+        "2025": 1,
+        "42": 1,
+        "5": 1,
+        "a": 3,
+        "acme": 3,
+        "across": 1,
+        "an": 1,
+        "annual": 1,
+        "by": 1,
+        "company": 1,
+        "continents": 1,
+        "deterministic": 1,
+        "document": 1,
+        "employs": 1,
+        "engine": 1,
+        "engineers": 1,
+        "fiscal": 1,
+        "flagship": 1,
+        "founded": 1,
+        "francisco": 1,
+        "horizon": 1,
+        "in": 3,
+        "is": 1,
+        "led": 1,
+        "million": 1,
+        "of": 1,
+        "product": 1,
+        "raised": 1,
+        "readr": 1,
+        "recurring": 1,
+        "reported": 1,
+        "revenue": 1,
+        "round": 1,
+        "san": 1,
+        "search": 1,
+        "series": 1,
+        "technologies": 1,
+        "the": 1,
+        "their": 1,
+        "three": 1,
+        "ventures": 1,
+        "was": 1,
+        "year": 1
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "dc16608c-c971-4002-aa06-406363caa843",
+      "timestamp": "2026-11-02T03:25:50.3949637+01:00",
+      "query": "when was acme founded?",
+      "result": {
+        "query": "when was acme founded?",
+        "status": "found",
+        "primaryMatch": {
+          "chunkId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a-chk-0",
+          "documentId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+          "filename": "sample.txt",
+          "chunkIndex": 0,
+          "content": "Acme Technologies was founded in 2018 in San Francisco. In fiscal year 2025, Acme reported an annual recurring revenue of $42.5 million. The company employs 150 engineers across three continents. Their flagship product is Readr, a deterministic document search engine. Acme raised a $12M Series A round led by Horizon Ventures.",
+          "score": 0.7672,
+          "matchPercentage": 100,
+          "matchedKeywords": [
+            "acme",
+            "founded"
+          ]
+        },
+        "allMatches": [
+          {
+            "chunkId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a-chk-0",
+            "documentId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+            "filename": "sample.txt",
+            "chunkIndex": 0,
+            "content": "Acme Technologies was founded in 2018 in San Francisco. In fiscal year 2025, Acme reported an annual recurring revenue of $42.5 million. The company employs 150 engineers across three continents. Their flagship product is Readr, a deterministic document search engine. Acme raised a $12M Series A round led by Horizon Ventures.",
+            "score": 0.7672,
+            "matchPercentage": 100,
+            "matchedKeywords": [
+              "acme",
+              "founded"
+            ]
+          }
+        ],
+        "totalChunksSearched": 1,
+        "executionTimeMs": 0
+      }
+    },
+    {
+      "id": "a134c550-8006-4440-9aed-f55b77dafa73",
+      "timestamp": "2026-11-02T03:26:20.3553898+01:00",
+      "query": "what was acme revenue in 2025?",
+      "result": {
+        "query": "what was acme revenue in 2025?",
+        "status": "found",
+        "primaryMatch": {
+          "chunkId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a-chk-0",
+          "documentId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+          "filename": "sample.txt",
+          "chunkIndex": 0,
+          "content": "Acme Technologies was founded in 2018 in San Francisco. In fiscal year 2025, Acme reported an annual recurring revenue of $42.5 million. The company employs 150 engineers across three continents. Their flagship product is Readr, a deterministic document search engine. Acme raised a $12M Series A round led by Horizon Ventures.",
+          "score": 1.0548,
+          "matchPercentage": 100,
+          "matchedKeywords": [
+            "acme",
+            "revenue",
+            "2025"
+          ]
+        },
+        "allMatches": [
+          {
+            "chunkId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a-chk-0",
+            "documentId": "c3706adc-aaf2-4bf4-8283-b2feb441d01a",
+            "filename": "sample.txt",
+            "chunkIndex": 0,
+            "content": "Acme Technologies was founded in 2018 in San Francisco. In fiscal year 2025, Acme reported an annual recurring revenue of $42.5 million. The company employs 150 engineers across three continents. Their flagship product is Readr, a deterministic document search engine. Acme raised a $12M Series A round led by Horizon Ventures.",
+            "score": 1.0548,
+            "matchPercentage": 100,
+            "matchedKeywords": [
+              "acme",
+              "revenue",
+              "2025"
+            ]
+          }
+        ],
+        "totalChunksSearched": 1,
+        "executionTimeMs": 0
+      }
+    }
+  ]
 }

@@ -204,4 +204,3 @@ func (c *Client) handleResourceRead(id json.RawMessage, paramsRaw json.RawMessag
 		c.sendResponse(NewErrorResponse(id, CodeInvalidParams, fmt.Sprintf("Resource URI '%s' not recognized", params.URI), nil))
 	}
 }
-

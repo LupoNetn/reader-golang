@@ -36,13 +36,17 @@ export function IngestModal({ isOpen, onClose, onIngest }: IngestModalProps) {
 
     setSelectedFile(file);
 
-    // Read first 1000 characters for preview
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = (e.target?.result as string) || '';
-      setFilePreview(text.slice(0, 500));
-    };
-    reader.readAsText(file);
+    // Read first characters for preview
+    if (file.name.toLowerCase().endsWith('.pdf')) {
+      setFilePreview(`[PDF Document: ${file.name} - Text will be extracted deterministically upon ingestion]`);
+    } else {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const text = (e.target?.result as string) || '';
+        setFilePreview(text.slice(0, 500));
+      };
+      reader.readAsText(file);
+    }
   }, []);
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -132,7 +136,7 @@ export function IngestModal({ isOpen, onClose, onIngest }: IngestModalProps) {
           <input
             ref={fileInputRef}
             type="file"
-            accept=".txt,.md,.csv,.json"
+            accept=".txt,.md,.csv,.json,.pdf"
             onChange={handleFileChange}
             className="hidden"
           />
@@ -158,7 +162,7 @@ export function IngestModal({ isOpen, onClose, onIngest }: IngestModalProps) {
                 Click to browse or drag file here
               </p>
               <p className="text-[11px] text-neutral-400 mt-1">
-                Supports TXT, MD, CSV, JSON (max 20MB)
+                Supports TXT, MD, CSV, JSON, PDF (max 20MB)
               </p>
             </div>
           </div>

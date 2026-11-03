@@ -25,7 +25,6 @@ type Store struct {
 	history   []ChatHistoryItem
 }
 
-// NewStore initializes a new Store and loads existing data from disk if present.
 func NewStore(dataPath string) (*Store, error) {
 	s := &Store{
 		dataPath:  dataPath,
@@ -120,12 +119,10 @@ func (s *Store) flushLocked() error {
 	return nil
 }
 
-// Ingest stores a document's metadata and chunks, atomically writing to disk.
 func (s *Store) Ingest(meta DocumentMeta, chunks []DocumentChunk) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 
-	// If document already exists, remove previous chunks
 	if _, exists := s.documents[meta.ID]; exists {
 		filtered := make([]DocumentChunk, 0, len(s.chunks))
 		for _, c := range s.chunks {
@@ -142,7 +139,6 @@ func (s *Store) Ingest(meta DocumentMeta, chunks []DocumentChunk) error {
 	return s.flushLocked()
 }
 
-// Delete removes a document and cascades deletion to all of its chunks.
 func (s *Store) Delete(docID string) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -164,7 +160,6 @@ func (s *Store) Delete(docID string) error {
 	return s.flushLocked()
 }
 
-// GetAllChunks returns a thread-safe copy of all chunks currently in memory.
 func (s *Store) GetAllChunks() []DocumentChunk {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
@@ -174,7 +169,6 @@ func (s *Store) GetAllChunks() []DocumentChunk {
 	return result
 }
 
-// GetDocuments returns a sorted slice of all document metadata.
 func (s *Store) GetDocuments() []DocumentMeta {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
@@ -191,7 +185,6 @@ func (s *Store) GetDocuments() []DocumentMeta {
 	return docs
 }
 
-// GetDocument returns a single document metadata by ID.
 func (s *Store) GetDocument(id string) (DocumentMeta, bool) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
@@ -200,7 +193,6 @@ func (s *Store) GetDocument(id string) (DocumentMeta, bool) {
 	return doc, exists
 }
 
-// AddHistory appends a search result to the history log and persists it.
 func (s *Store) AddHistory(item ChatHistoryItem) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -215,7 +207,6 @@ func (s *Store) AddHistory(item ChatHistoryItem) error {
 	return s.flushLocked()
 }
 
-// GetHistory returns a copy of past queries and their results.
 func (s *Store) GetHistory() []ChatHistoryItem {
 	s.mu.RLock()
 	defer s.mu.RUnlock()

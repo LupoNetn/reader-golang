@@ -10,7 +10,7 @@ import type {
 } from './types';
 
 export type { ProgressState };
-export function useMcpWebSocket(url: string = 'ws://localhost:3030/ws') {
+export function useMcpWebSocket(url: string = 'ws://localhost:3034/ws') {
   const [status, setStatus] = useState<ConnectionStatus>('connecting');
   const [currentProgress, setCurrentProgress] = useState<ProgressState | null>(null);
 
